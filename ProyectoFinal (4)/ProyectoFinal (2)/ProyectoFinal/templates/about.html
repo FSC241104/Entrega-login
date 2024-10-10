@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Bienvenidos a XERO CLOCK</h1>
+    <p>Somos un emprendimiento de dos amigos apasionados por los relojes y comprometidos con ofrecer productos de alta calidad a nuestros clientes.</p>
+    <hr class="my-4" />
+    <p>Nuestra historia comenzó cuando uno de nosotros, un estudiante de la universidad, se dio cuenta de la oportunidad de crear un negocio relacionado con la venta de relojes. Con la ayuda de su amigo, que tenía contactos con distribuidores de relojes, pudieron unir sus conocimientos y habilidades para crear XERO CLOCK.</p>
+    <p>Nuestro objetivo es ofrecer a nuestros clientes una amplia variedad de relojes de marcas, así como también modelos exclusivos y únicos. Queremos que nuestros clientes se sientan satisfechos con su compra y que se conviertan en clientes leales.</p>
+    <p>En XERO CLOCK, nos esforzamos por proporcionar un servicio al cliente excepcional, respondiendo a todas sus preguntas y necesidades de manera oportuna y eficiente. Queremos que nuestros clientes se sientan valorados y apreciados.</p>
+    <h2>Nuestros valores</h2>
+    <ul>
+      <li>Calidad: Nos comprometemos a ofrecer productos de alta calidad que satisfacen las necesidades de nuestros clientes.</li>
+      <li>Confianza: Queremos que nuestros clientes se sientan seguros y confíen en nosotros para satisfacer sus necesidades de relojes.</li>
+      <li>Innovación: Estamos siempre en busca de nuevas y emocionantes formas de ofrecer nuestros productos y servicios.</li>
+    </ul>
+    <p>Gracias por visitar XERO CLOCK. Esperamos que disfrutes de nuestra selección de relojes y que te conviertas en un cliente satisfecho.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('catalogo') }}" role="button">Ver productos</a>
+  </div>
+{% endblock %}

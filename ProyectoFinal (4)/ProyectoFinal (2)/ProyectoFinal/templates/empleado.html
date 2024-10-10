@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Agregar Nuevo Empleado</h2>
+
+    <!-- Formulario para agregar un nuevo empleado -->
+    <form method="POST" action="/empleado">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido" required>
+        </div>
+        <div class="mb-3">
+            <label for="cedula" class="form-label">Cédula</label>
+            <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingrese la cédula" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el teléfono" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Empleado</button>
+    </form>
+</div>
+{% endblock %}

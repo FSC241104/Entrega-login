@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}XERO CLOCK{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h3>Nuestro Producto</h3>
+    <div class="container my-3 mx-3">
+        <ul class="list-unstyled d-flex">
+            <li> 
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='imagenes/BSW.jpg') }}" class="img-fluid" alt="Imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">REWARD</h5>
+                        <p class="card-text">Reloj en acero inoxidable color negro. Elegante para salidas y eventos importantes.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Referencia: EA2024</li>
+                            <li class="list-group-item">Precio: $500,000</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Comprar Producto</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
