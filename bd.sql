@@ -513,6 +513,43 @@ CREATE OR REPLACE FUNCTION obtener_empleado(
 
 
 
+REATE OR REPLACE FUNCTION actualizar_id_login_empleado() RETURNS TRIGGER AS $$
+		BEGIN
+		    -- Actualizar el id_login del empleado insertado con el último id_login disponible
+		    NEW.id_login := (SELECT id_login FROM login_empleados ORDER BY id_login DESC LIMIT 1);
+		    
+		    -- En caso de que no haya ningún login disponible, levantamos una excepción
+		    IF NEW.id_login IS NULL THEN
+		        RAISE EXCEPTION 'No hay registros en la tabla login_empleados';
+		    END IF;
+		
+		    RETURN NEW;
+		END;
+		$$ LANGUAGE plpgsql;
+		
+		
+		CREATE TRIGGER trigger_actualizar_id_login_empleado
+		BEFORE INSERT ON empleados
+		FOR EACH ROW
+		EXECUTE FUNCTION actualizar_id_login_empleado();
+	insert into empleados 
+	
+	INSERT INTO empleados (nombre, apellido, cedula, telefono)
+	VALUES ('Santiago', 'Restrepo', '1234567890', '5551234');
+	
+	
+	TRUNCATE TABLE login_empleados RESTART IDENTITY;
+	TRUNCATE TABLE empleados RESTART IDENTITY;
+	
+	-- Insert initial row with ID 0
+	INSERT INTO login_empleados (id_login, ...) VALUES (0, ...);
+	INSERT INTO empleados (id_empleado, ...) VALUES (0, ...);
+	
+	-- Adjust sequences to start from 1 after the 0 row
+	ALTER SEQUENCE login_empleados_id_login_seq RESTART WITH 1;
+	ALTER SEQUENCE empleados_id_empleado_seq RESTART WITH 1;
+
+
 	
 	
 
